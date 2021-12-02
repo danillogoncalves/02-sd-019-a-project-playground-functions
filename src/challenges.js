@@ -98,11 +98,55 @@ function fizzBuzz(array) {
 }
 
 // Desafio 9
-function encode() {
+function encode(string) {
   // seu código aqui
+  let lowercaseString = string.split('');
+  for (let i = 0; i < lowercaseString.length; i += 1) {
+  switch (lowercaseString[i]) {
+    case 'a':
+      lowercaseString[i] = 1;
+      break;
+    case 'e':
+      lowercaseString[i] = 2
+      break;
+    case 'i':
+      lowercaseString[i] = 3;
+      break;
+    case 'o':
+      lowercaseString[i] = 4;
+      break;
+    case 'u':
+      lowercaseString[i] = 5;
+      break;
+  }
+  }
+  lowercaseString = lowercaseString.join('');
+  return lowercaseString;
 }
-function decode() {
+function decode(string) {
   // seu código aqui
+  let lowercaseString = string.split('');
+  for (let i = 0; i < lowercaseString.length; i += 1) {
+    switch (lowercaseString[i]) {
+      case '1':
+        lowercaseString[i] = 'a';
+        break;
+      case '2':
+        lowercaseString[i] = 'e'
+        break;
+      case '3':
+        lowercaseString[i] = 'i';
+        break;
+      case '4':
+        lowercaseString[i] = 'o';
+        break;
+      case '5':
+        lowercaseString[i] = 'u';
+        break;
+    }
+  }
+  lowercaseString = lowercaseString.join('');
+  return lowercaseString;
 }
 
 module.exports = {
