@@ -1,7 +1,7 @@
 // Desafio 1
 function compareTrue(p1, p2) {
   // seu código aqui
-  if ( p1 === true && p2 === true ) {
+  if (p1 === true && p2 === true) {
     return true;
   } else {
     return false;
@@ -15,13 +15,19 @@ function calcArea(base, height) {
 }
 
 // Desafio 3
-function splitSentence() {
+function splitSentence(string) {
   // seu código aqui
+  let part = string.split(' ');
+  return part;
 }
 
 // Desafio 4
-function concatName() {
+function concatName(array) {
   // seu código aqui
+  let firthName = array[0];
+  let lastName = array[array.length - 1];
+  let lastFirth = lastName + ', ' + firthName;
+  return lastFirth;
 }
 
 // Desafio 5
