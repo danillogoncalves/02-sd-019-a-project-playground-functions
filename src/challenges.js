@@ -149,7 +149,6 @@ function decode(string) {
   return lowercaseString;
 }
 
-
 module.exports = {
   calcArea,
   catAndMouse,
