@@ -6,13 +6,13 @@ function techList(array, string) {
   let personalTech = {};
 
   for (let i = 0; i < arraySort.length; i += 1) {
-    let personalTech = {};
     personalTech.tech = arraySort[i];
     personalTech.name = string;
     arrayPrint.push(personalTech);
+    personalTech = {};
   }
   if (arrayPrint.length === 0) {
-    return "Vazio!";
+    return 'Vazio!';
   }
   return arrayPrint;
 }
