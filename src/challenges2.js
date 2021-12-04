@@ -23,7 +23,6 @@ function generatePhoneNumber(array) {
   if (array.length !== 11) {
     return 'Array com tamanho incorreto.';
   }
-  //  let comparison =array[0]
   for (let i = 0; i < array.length; i += 1) {
     if (array[i] < 0 || array[i] > 9) {
       return 'não é possível gerar um número de telefone com esses valores';
@@ -40,6 +39,8 @@ function generatePhoneNumber(array) {
       }
     }
   }
+  // No grupo de estudos do dia 04/12/2021, aprendi esse jeito de concatenar usando template strings.
+  // Quem apresentou esse jeito foi o Raphael Martins - Turma 19 - Tribo A
   return `(${array[0]}${array[1]}) ${array[2]}${array[3]}${array[4]}${array[5]}${array[6]}-${array[7]}${array[8]}${array[9]}${array[10]}`;;
 }
 
