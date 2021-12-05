@@ -77,6 +77,8 @@ function triangleCheck(lineA, lineB, lineC) {
 // Desafio 13
 function hydrate(string) {
   // seu código aqui
+  // https://stackoverflow.com/questions/1623221/how-to-find-a-number-in-a-string-using-javascript/30160994
+  // https://www.horadecodar.com.br/2021/01/21/como-converter-uma-string-para-int-em-javascript/
   let onlyNumber = string.match(/\d+/g);
   let multiply = 0;
   for (let i = 0; i < onlyNumber.length; i += 1) {
