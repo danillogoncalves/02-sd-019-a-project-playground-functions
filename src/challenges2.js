@@ -41,7 +41,7 @@ function generatePhoneNumber(array) {
   }
   // No grupo de estudos do dia 04/12/2021, aprendi esse jeito de concatenar usando template strings.
   // Quem apresentou esse jeito foi o Raphael Martins - Turma 19 - Tribo A
-  return `(${array[0]}${array[1]}) ${array[2]}${array[3]}${array[4]}${array[5]}${array[6]}-${array[7]}${array[8]}${array[9]}${array[10]}`;;
+  return `(${array[0]}${array[1]}) ${array[2]}${array[3]}${array[4]}${array[5]}${array[6]}-${array[7]}${array[8]}${array[9]}${array[10]}`;
 }
 
 // Desafio 12
@@ -75,8 +75,20 @@ function triangleCheck(lineA, lineB, lineC) {
 }
 
 // Desafio 13
-function hydrate() {
+function hydrate(string) {
   // seu código aqui
+  let onlyNumber = string.match(/\d+/g);
+  let multiply = 0;
+  for (let i = 0; i < onlyNumber.length; i += 1) {
+    multiply += parseInt(onlyNumber[i]);
+  }
+  if (multiply <= 0) {
+    return 'Tu não bebeu ainda, vai beber leite bebê?';
+  } else if (multiply > 1) {
+    return `${multiply} copos de água`;
+  } else {
+    return `${multiply} copo de água`;
+  }
 }
 
 module.exports = {
