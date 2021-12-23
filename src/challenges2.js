@@ -82,15 +82,15 @@ function hydrate(string) {
   let onlyNumber = string.match(/\d+/g);
   let multiply = 0;
   for (let i = 0; i < onlyNumber.length; i += 1) {
-    multiply += parseInt(onlyNumber[i]);
+    multiply += parseInt(onlyNumber[i], 10);
   }
   if (multiply <= 0) {
     return 'Tu não bebeu ainda, vai beber leite bebê?';
-  } else if (multiply > 1) {
-    return `${multiply} copos de água`;
-  } else {
-    return `${multiply} copo de água`;
   }
+  if (multiply > 1) {
+    return `${multiply} copos de água`;
+  }
+  return `${multiply} copo de água`;
 }
 
 module.exports = {

@@ -3,9 +3,8 @@ function compareTrue(p1, p2) {
   // seu código aqui
   if (p1 === true && p2 === true) {
     return true;
-  } else {
-    return false;
   }
+  return false;
 }
 
 // Desafio 2
@@ -26,7 +25,7 @@ function concatName(array) {
   // seu código aqui
   let firthName = array[0];
   let lastName = array[array.length - 1];
-  let lastFirth = lastName + ', ' + firthName;
+  let lastFirth = `${lastName}, ${firthName}`;
   return lastFirth;
 }
 
@@ -40,21 +39,31 @@ function footballPoints(wins, ties) {
 }
 
 // Desafio 6
-function highestCount(array) {
-  // seu código aqui
+
+function verifyBiggerNumber(array) {
   let biggerNumber = array[0];
-  let count = 0;
   for (let i = 0; i < array.length; i += 1) {
     if (array[i] > biggerNumber) {
       biggerNumber = array[i];
     }
   }
+  return biggerNumber;
+}
+
+function countBiggerNumber(number, array) {
+  let count = 0;
   for (let i = 0; i < array.length; i += 1) {
-    if (array[i] === biggerNumber) {
+    if (array[i] === number) {
       count += 1;
     }
   }
   return count;
+}
+
+function highestCount(array) {
+  // seu código aqui
+  const realBiggerNumber = verifyBiggerNumber(array);
+  return countBiggerNumber(realBiggerNumber, array);
 }
 
 // Desafio 7
@@ -64,17 +73,17 @@ function catAndMouse(mouse, cat1, cat2) {
   let mouseCat2 = mouse - cat2;
   let resultOfTheHunt = '';
   if (mouseCat1 < 0) {
-    mouseCat1 = mouseCat1 * -1;
+    mouseCat1 *= -1;
   }
   if (mouseCat2 < 0) {
-    mouseCat2 = mouseCat2 * -1;
+    mouseCat2 *= -1;
   }
   if (mouseCat1 === mouseCat2) {
-    resultOfTheHunt = "os gatos trombam e o rato foge";
+    resultOfTheHunt = 'os gatos trombam e o rato foge';
   } else if (mouseCat1 < mouseCat2) {
-    resultOfTheHunt = "cat1";
+    resultOfTheHunt = 'cat1';
   } else {
-    resultOfTheHunt = "cat2";
+    resultOfTheHunt = 'cat2';
   }
   return resultOfTheHunt;
 }
