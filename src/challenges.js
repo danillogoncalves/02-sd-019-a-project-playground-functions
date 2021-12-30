@@ -89,22 +89,31 @@ function catAndMouse(mouse, cat1, cat2) {
 }
 
 // Desafio 8
+function buildTheSentence(array, i) {
+  if (array[i] % 3 === 0 && array[i] % 5 === 0) {
+    return 'fizzBuzz';
+  }
+  if (array[i] % 3 === 0) {
+    return 'fizz';
+  }
+  if (array[i] % 5 === 0) {
+    return 'buzz';
+  }
+  return 'bug!';
+}
+
 function fizzBuzz(array) {
   // seu código aqui
   let phrase = [];
   for (let i = 0; i < array.length; i += 1) {
-    if (array[i] % 3 === 0 && array[i] % 5 === 0) {
-      phrase.push("fizzBuzz");
-    } else if (array[i] % 3 === 0) {
-      phrase.push("fizz");
-    } else if (array[i] % 5 === 0) {
-      phrase.push("buzz");
-    } else {
-      phrase.push("bug!");
-    }
+    const index = i;
+    const word = buildTheSentence(array, index);
+    phrase.push(word);
   }
   return phrase;
 }
+
+console.log(fizzBuzz([2, 15, 7, 9, 45]));
 
 // Desafio 9
 function encode(string) {
@@ -132,6 +141,7 @@ function encode(string) {
   lowercaseString = lowercaseString.join('');
   return lowercaseString;
 }
+
 function decode(string) {
   // seu código aqui
   let lowercaseString = string.split('');
