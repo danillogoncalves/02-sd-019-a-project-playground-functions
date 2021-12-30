@@ -113,30 +113,50 @@ function fizzBuzz(array) {
   return phrase;
 }
 
-console.log(fizzBuzz([2, 15, 7, 9, 45]));
-
 // Desafio 9
+// function characterAnalysisEncode(array, i) {
+//   switch (array[i]) {
+//     case 'a':
+//       array[i] = 1;
+//       break;
+//     case 'e':
+//       array[i] = 2
+//       break;
+//     case 'i':
+//       array[i] = 3;
+//       break;
+//     case 'o':
+//       array[i] = 4;
+//       break;
+//     case 'u':
+//       array[i] = 5;
+//       break;
+//     default:
+//   }
+// }
+
 function encode(string) {
   // seu código aqui
   let lowercaseString = string.split('');
   for (let i = 0; i < lowercaseString.length; i += 1) {
-  switch (lowercaseString[i]) {
-    case 'a':
-      lowercaseString[i] = 1;
-      break;
-    case 'e':
-      lowercaseString[i] = 2
-      break;
-    case 'i':
-      lowercaseString[i] = 3;
-      break;
-    case 'o':
-      lowercaseString[i] = 4;
-      break;
-    case 'u':
-      lowercaseString[i] = 5;
-      break;
-  }
+    switch (lowercaseString[i]) {
+      case 'a':
+        lowercaseString[i] = 1;
+        break;
+      case 'e':
+        lowercaseString[i] = 2
+        break;
+      case 'i':
+        lowercaseString[i] = 3;
+        break;
+      case 'o':
+        lowercaseString[i] = 4;
+        break;
+      case 'u':
+        lowercaseString[i] = 5;
+        break;
+      default:
+    }
   }
   lowercaseString = lowercaseString.join('');
   return lowercaseString;
@@ -162,11 +182,15 @@ function decode(string) {
       case '5':
         lowercaseString[i] = 'u';
         break;
+      default:
     }
   }
   lowercaseString = lowercaseString.join('');
   return lowercaseString;
 }
+
+console.log(encode('hi there!'));
+console.log(decode('h3 th2r2!'));
 
 module.exports = {
   calcArea,
