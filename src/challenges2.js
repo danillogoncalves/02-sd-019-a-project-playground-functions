@@ -18,8 +18,8 @@ function techList(array, string) {
 }
 
 // Desafio 11
-function generatePhoneNumber(array) {
-  // seu código aqui
+
+function numberIsValid(array) {
   if (array.length !== 11) {
     return 'Array com tamanho incorreto.';
   }
@@ -28,8 +28,11 @@ function generatePhoneNumber(array) {
       return 'não é possível gerar um número de telefone com esses valores';
     }
   }
+}
+
+function numberRepeats3Times(array) {
   for (let i = 0; i < array.length; i += 1) {
-    let count = 0
+    let count = 0;
     for (let s = 0; s < array.length; s += 1) {
       if (array[i] === array[s]) {
         count += 1;
@@ -39,10 +42,26 @@ function generatePhoneNumber(array) {
       }
     }
   }
+}
+
+function generatePhoneNumber(array) {
+  // seu código aqui
+  if (numberIsValid(array)) {
+    return numberIsValid(array);
+  }
+  if (numberRepeats3Times(array)) {
+    return numberRepeats3Times(array);
+  }
   // No grupo de estudos do dia 04/12/2021, aprendi esse jeito de concatenar usando template strings.
   // Quem apresentou esse jeito foi o Raphael Martins - Turma 19 - Tribo A
-  return `(${array[0]}${array[1]}) ${array[2]}${array[3]}${array[4]}${array[5]}${array[6]}-${array[7]}${array[8]}${array[9]}${array[10]}`;
+  const prefix = `(${array[0]}${array[1]})`;
+  const firstNumbers = `${array[2]}${array[3]}${array[4]}${array[5]}${array[6]}`;
+  const lastNumbers = `${array[7]}${array[8]}${array[9]}${array[10]}`;
+
+  return `${prefix} ${firstNumbers}-${lastNumbers}`;
 }
+
+console.log(generatePhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1]));
 
 // Desafio 12
 function triangleCheck(lineA, lineB, lineC) {
