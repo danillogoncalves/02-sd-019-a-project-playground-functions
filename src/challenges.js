@@ -114,48 +114,20 @@ function fizzBuzz(array) {
 }
 
 // Desafio 9
-// function characterAnalysisEncode(array, i) {
-//   switch (array[i]) {
-//     case 'a':
-//       array[i] = 1;
-//       break;
-//     case 'e':
-//       array[i] = 2
-//       break;
-//     case 'i':
-//       array[i] = 3;
-//       break;
-//     case 'o':
-//       array[i] = 4;
-//       break;
-//     case 'u':
-//       array[i] = 5;
-//       break;
-//     default:
-//   }
-// }
 
 function encode(string) {
   // seu código aqui
   let lowercaseString = string.split('');
+  const caracter = {
+    a: '1',
+    e: '2',
+    i: '3',
+    o: '4',
+    u: '5',
+  };
   for (let i = 0; i < lowercaseString.length; i += 1) {
-    switch (lowercaseString[i]) {
-      case 'a':
-        lowercaseString[i] = 1;
-        break;
-      case 'e':
-        lowercaseString[i] = 2
-        break;
-      case 'i':
-        lowercaseString[i] = 3;
-        break;
-      case 'o':
-        lowercaseString[i] = 4;
-        break;
-      case 'u':
-        lowercaseString[i] = 5;
-        break;
-      default:
+    if (caracter[lowercaseString[i]]) {
+      lowercaseString[i] = caracter[lowercaseString[i]];
     }
   }
   lowercaseString = lowercaseString.join('');
@@ -165,24 +137,16 @@ function encode(string) {
 function decode(string) {
   // seu código aqui
   let lowercaseString = string.split('');
+  const caracter = {
+    1: 'a',
+    2: 'e',
+    3: 'i',
+    4: 'o',
+    5: 'u',
+  };
   for (let i = 0; i < lowercaseString.length; i += 1) {
-    switch (lowercaseString[i]) {
-      case '1':
-        lowercaseString[i] = 'a';
-        break;
-      case '2':
-        lowercaseString[i] = 'e'
-        break;
-      case '3':
-        lowercaseString[i] = 'i';
-        break;
-      case '4':
-        lowercaseString[i] = 'o';
-        break;
-      case '5':
-        lowercaseString[i] = 'u';
-        break;
-      default:
+    if (caracter[lowercaseString[i]]) {
+      lowercaseString[i] = caracter[lowercaseString[i]];
     }
   }
   lowercaseString = lowercaseString.join('');
