@@ -18,7 +18,7 @@ function techList(array, string) {
 }
 
 // Desafio 11
-
+//  Raphael Martins - Turma 19 - Tribo A me ajudou nesse código
 function numberIsValid(array) {
   if (array.length !== 11) {
     return 'Array com tamanho incorreto.';
@@ -59,7 +59,7 @@ function generatePhoneNumber(array) {
 }
 
 // Desafio 12
-
+//  Raphael Martins - Turma 19 - Tribo A me ajudou nesse código
 function triangleCheck(lineA, lineB, lineC) {
   // seu código aqui
   let a = Math.abs(lineA);

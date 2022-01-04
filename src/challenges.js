@@ -114,7 +114,7 @@ function fizzBuzz(array) {
 }
 
 // Desafio 9
-
+//  Raphael Martins - Turma 19 - Tribo A me ajudou nesse código
 function encode(string) {
   // seu código aqui
   let lowercaseString = string.split('');
