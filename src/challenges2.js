@@ -32,14 +32,11 @@ function numberIsValid(array) {
 
 function numberRepeats3Times(array) {
   for (let i = 0; i < array.length; i += 1) {
-    let count = 0;
-    for (let s = 0; s < array.length; s += 1) {
-      if (array[i] === array[s]) {
-        count += 1;
-      }
-      if (count > 2) {
-        return 'não é possível gerar um número de telefone com esses valores';
-      }
+    const currentNumber = array[i];
+    const doesItRepeat = (x) => x === currentNumber;
+    const arrayRepeat = array.filter(doesItRepeat);
+    if (arrayRepeat.length > 2) {
+      return true;
     }
   }
 }
@@ -50,7 +47,7 @@ function generatePhoneNumber(array) {
     return numberIsValid(array);
   }
   if (numberRepeats3Times(array)) {
-    return numberRepeats3Times(array);
+    return 'não é possível gerar um número de telefone com esses valores';
   }
   // No grupo de estudos do dia 04/12/2021, aprendi esse jeito de concatenar usando template strings.
   // Quem apresentou esse jeito foi o Raphael Martins - Turma 19 - Tribo A
@@ -61,9 +58,8 @@ function generatePhoneNumber(array) {
   return `${prefix} ${firstNumbers}-${lastNumbers}`;
 }
 
-console.log(generatePhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1]));
-
 // Desafio 12
+
 function triangleCheck(lineA, lineB, lineC) {
   // seu código aqui
   let a = Math.abs(lineA);
