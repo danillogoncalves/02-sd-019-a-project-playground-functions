@@ -65,28 +65,13 @@ function triangleCheck(lineA, lineB, lineC) {
   let a = Math.abs(lineA);
   let b = Math.abs(lineB);
   let c = Math.abs(lineC);
-  let allMeanSmaller = false;
-  let allBiggestAbsoluteDifference = false;
-  if (a > b + c) {
+  if (a > b + c || b > a + c || c > a + b) {
     return false;
-  } else if (b > a + c) {
-    return false;
-  } else if (c > a + b) {
-    return false;
-  } else {
-    allMeanSmaller = true;
   }
-
-  if (a < Math.abs(b - c)) {
-    return false;
-  } else if (b < Math.abs(a - c)) {
-    return false;
-  } else if (c < Math.abs(a - b)) {
-    return false;
-  } else {
-    allBiggestAbsoluteDifference = true;
-  }
-  return allBiggestAbsoluteDifference === allMeanSmaller;
+  // if (a < Math.abs(b - c) || b < Math.abs(a - c) || c < Math.abs(a - b)) {
+  //   return false;
+  // }
+  return true;
 }
 
 // Desafio 13
